@@ -15,11 +15,11 @@ app.get('/shorten', shortenURL);
 app.get('/redirect', redirectToOriginalURL);
 
 app.get('/', (req, res) =>{
-  res.render('index.pug')
+  res.render('index')
 })
-
-
-
+app.get('/generator', (req, res) => {
+  res.render('generator.pug');
+});
 
 // Iniciando o servidor
 const PORT = 3000;

@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Minha Página
+  body
+    h1 Bem-vindo à Minha Página
+    form(action="/shorten", method="get")
+      label(for="url") Insira a URL para encurtar:
+      input(type="text", id="url", name="url")
+      button(type="submit") Encurtar URL
