@@ -21,6 +21,8 @@ async function saveURL(url) {
       body: JSON.stringify({
         shortUrl: shortUrl,
       }),
+      shortUrl
+      
     };
   } catch (error) {
     console.error('Error while inserting data:', error);

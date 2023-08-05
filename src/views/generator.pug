@@ -8,3 +8,7 @@ html
       label(for="url") Insira a URL para encurtar:
       input(type="text", id="url", name="url")
       button(type="submit") Encurtar URL
+
+    // Exibe a URL encurtada recém gerada, se existir
+    if shortUrl
+      h2= `URL Encurtada: ${shortUrl}`
