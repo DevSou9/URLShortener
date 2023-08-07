@@ -1,21 +1,18 @@
-const {client} = require('./client.js')
-const db = 'dbMongodb'
+const { client } = require('./client.js');
 
-async function connectMongodb(){
-    try{
+const db = 'dbMongodb';
 
-        console.log(`Testando o client.Connect() ---------- ${client}`);
-        const clientConnect = await client.connect();
-        console.log(`Testando o client.Connect() 2222222222222 ${client}`);
-        const dbConnect = clientConnect.db(db);
-        console.log(`Connectado ao MongoDB`);
-        return dbConnect
-    }
-    catch(error){
-        console.log(`Erro ao se connectar: ${error}`);
-        throw error;
-    }
+async function connectMongodb() {
+	try {
+		const clientConnect = await client.connect();
+		const dbConnect = clientConnect.db(db);
+		return dbConnect;  
+	} 
+	catch (error) {
+
+		console.log(`Erro: ${error}`);
+		throw error;
+	}
 }
 
-
-module.exports = {connectMongodb}
+module.exports = { connectMongodb };
