@@ -7,7 +7,7 @@ async function redirectToOriginalURL(shortUrl) {
 	try {
 		dbConnect = await connectMongodb();
 		const urlData = await dbConnect.collection('URLs').findOne({ shortUrl });
-
+		//console.log(`Ver urlData: ${urlData.url}`);
 		if (!urlData) {
 			console.log('URL not found');
 			finished = true;
@@ -20,13 +20,12 @@ async function redirectToOriginalURL(shortUrl) {
 		finished = true;
 		return urlData.url;
 	} catch (error) {
-		console.error('Error while fetching data:', error);
+		//console.error('Error while fetching data:', error);
 		finished = true;
 		return 500;
 	} finally {
 		if (finished && !dbConnect) disconnectMongodb();
 	}
 }
-
 // redirectToOriginalURL('https://dev.com/5zmKq');
 module.exports = { redirectToOriginalURL };

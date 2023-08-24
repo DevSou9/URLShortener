@@ -10,10 +10,10 @@ async function saveURL(url) {
 		const dbConnect = await connectMongodb();
 		const shortUrl = generateShortURL();
 		const urlData = { url, shortUrl, expirationDate };
-		console.log('Ponto 1 *********************');
+		
 
 		await dbConnect.collection('URLs').insertOne(urlData);
-		console.log('Ponto 2 *********************');
+		
 
 		return {
 			statusCode: 200,

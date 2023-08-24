@@ -1,7 +1,5 @@
 const path = require('path');
-
 const express = require('express');
-
 const app = express();
 const { shortenURL } = require('./controllers/saveURLs');
 const { redirectToOriginalURL } = require('./controllers/getURLs');
